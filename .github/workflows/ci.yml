@@ -42,7 +42,7 @@ jobs:
         id: img
         run: echo "name=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/forwardguard" >> "$GITHUB_OUTPUT"
       - name: Login to GHCR
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
