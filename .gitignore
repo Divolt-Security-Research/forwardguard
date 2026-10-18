@@ -1,0 +1,101 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+.eggs/
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+.installed.cfg
+MANIFEST
+
+# --- Virtual envs ---
+.venv/
+venv/
+ENV/
+env/
+.python-version
+
+# --- Linters / test caches ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+.tox/
+.hypothesis/
+coverage.xml
+*.cover
+
+# --- Secrets / credentials (defense in depth) ---
+.env
+.env.*
+*.env
+secrets/
+secret/
+credentials/
+credentials.*
+*.credentials
+*_secret
+*_secret.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt            # intentionally broad — real certs live in operator infra, not the repo
+*.asc            # exported PGP keys
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+authorized_keys
+known_hosts
+.ssh/
+service-account.json
+service_account.json
+google-credentials.json
+.google-credentials.json
+.aws/
+.config/gcloud/
+
+# --- ForwardGuard runtime artefacts ---
+state/
+*.off                # P-SMTP log read offsets
+config.yaml          # local operator config (contains API tokens via ${ENV})
+config.json
+config.local.*
+*.local.yaml
+*.local.json
+logs/
+*.log
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.sublime-*
+
+# --- Build / release ---
+*.whl
+*.tar.gz
+*.tgz
+
+# --- Local-only overrides ---
+docker-compose.override.yml
+docker-compose.override.yaml

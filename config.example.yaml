@@ -1,0 +1,59 @@
+# ForwardGuard — example configuration
+#
+# Copy to config.yaml and edit for your environment.
+# Store secrets outside git; use environment-variable templating in CI/CD.
+
+state_dir: ./state                  # P-API baseline files
+smtp_state_file: ./state/smtp.off   # P-SMTP log read offset
+expected_hops: 2                    # P-IMAP: hop count above this is suspicious
+
+# Addresses allowed as forwarder destinations. Everything else is treated as
+# "foreign" and raises HIGH-severity alerts.
+whitelist_destinations:
+  - archive@mydomain.example
+  - security-ops@mydomain.example
+
+# ---------------- P-API: provider adapters ----------------
+providers:
+  - type: porkbun
+    domain: mydomain.example
+    apikey: ${PORKBUN_APIKEY}
+    secretapikey: ${PORKBUN_SECRETKEY}
+
+  - type: cpanel
+    domain: mydomain.example
+    host: cpanel.myhoster.example
+    user: myaccount
+    token: ${CPANEL_API_TOKEN}
+    tls_verify: true
+
+  - type: cloudflare
+    domain: mydomain.example
+    zone_id: ${CF_ZONE_ID}
+    api_token: ${CF_API_TOKEN}
+
+# ---------------- P-IMAP: inbox header inspection ----------------
+imap_mailboxes:
+  - host: imap.mydomain.example
+    user: ceo@mydomain.example
+    password: ${CEO_IMAP_PASSWORD}
+    domain: mydomain.example
+
+# ---------------- P-SMTP: MTA log correlation ----------------
+smtp_logs:
+  - /var/log/mail.log
+  - /var/log/mail.log.1
+
+# ---------------- P-CANARY: honeypot mailboxes ----------------
+canaries:
+  - host: imap.mydomain.example
+    user: canary-7ab3f2@mydomain.example
+    password: ${CANARY_PW}
+    domain: mydomain.example
+
+# ---------------- Alert sinks ----------------
+sinks:
+  - type: stdout
+  - type: syslog
+  - type: webhook
+    url: ${SLACK_WEBHOOK_URL}
