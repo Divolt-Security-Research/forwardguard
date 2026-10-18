@@ -10,7 +10,7 @@ import json
 import logging
 import syslog
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from enum import Enum
 from typing import Any
 from uuid import uuid4
@@ -39,7 +39,7 @@ class Alert:
     details: dict[str, Any] = field(default_factory=dict)
     event_id: str = field(default_factory=lambda: str(uuid4()))
     timestamp: str = field(
-        default_factory=lambda: datetime.now(timezone.utc).isoformat(timespec="seconds")
+        default_factory=lambda: datetime.now(UTC).isoformat(timespec="seconds")
     )
 
     def to_smfps(self) -> dict[str, Any]:

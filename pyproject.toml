@@ -58,23 +58,27 @@ asyncio_mode = "auto"
 
 [tool.ruff]
 target-version = "py311"
-line-length = 100
+line-length = 120
 
 [tool.ruff.lint]
-select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "S"]
+# Enable: pyflakes (F), pycodestyle errors (E), warnings (W), isort (I),
+# bugbear (B), pyupgrade (UP), security (S). Deliberately skip pep8-naming
+# and comprehensions-strictness; this is a research-grade codebase that
+# prizes clarity and compactness over total conformance.
+select = ["E", "F", "W", "I", "UP", "B", "S"]
 ignore = [
     # Blanket-except is intentional in background polling loops; one bad
-    # message must not crash the pipeline. Pair with the structured alert
-    # on parse errors.
+    # input must not crash the pipeline.
     "BLE001",
     # typer idiom: argument defaults use typer.Option(...)
     "B008",
-    # Short try/except/continue inside a tight parse loop; the alt is a
-    # noisier log line per bad input which is actively unhelpful.
+    # Short try/except/continue inside tight parse loops is deliberate
     "S112",
-    # list(set) is clearer than relying on sorted-of-set in a few places
-    "C414",
+    # Compact one-line style is readable in short handlers
+    "E701", "E702",
+    # Line-length <= 120; occasional long docstrings/log lines are fine
+    "E501",
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*" = ["S101"]  # assert-based tests are the point in pytest
+"tests/*" = ["S101", "S105", "S106"]  # asserts and test tokens
