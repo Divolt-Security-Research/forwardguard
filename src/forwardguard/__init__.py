@@ -14,15 +14,20 @@ Pipelines:
 """
 
 from .alert import Alert, AlertSink
-from .providers.base import Provider, Forwarder
 from .pipelines.api import ApiPipeline
+from .pipelines.canary import CanaryPipeline
 from .pipelines.imap import ImapPipeline
 from .pipelines.smtp import SmtpPipeline
-from .pipelines.canary import CanaryPipeline
+from .providers.base import Forwarder, Provider
 
 __version__ = "0.1.0"
 __all__ = [
-    "Alert", "AlertSink",
-    "Provider", "Forwarder",
-    "ApiPipeline", "ImapPipeline", "SmtpPipeline", "CanaryPipeline",
+    "Alert",
+    "AlertSink",
+    "ApiPipeline",
+    "CanaryPipeline",
+    "Forwarder",
+    "ImapPipeline",
+    "Provider",
+    "SmtpPipeline",
 ]

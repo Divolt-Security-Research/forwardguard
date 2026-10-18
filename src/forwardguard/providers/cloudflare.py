@@ -6,7 +6,8 @@ Endpoint: GET https://api.cloudflare.com/client/v4/zones/{zone_id}/email/routing
 from __future__ import annotations
 
 import httpx
-from .base import Provider, Forwarder
+
+from .base import Forwarder, Provider
 
 
 class CloudflareProvider(Provider):

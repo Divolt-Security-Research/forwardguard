@@ -10,10 +10,10 @@ import typer
 import yaml
 
 from .alert import StdoutSink, SyslogSink, WebhookSink
-from .pipelines.api    import ApiPipeline
-from .pipelines.imap   import ImapPipeline
-from .pipelines.smtp   import SmtpPipeline
+from .pipelines.api import ApiPipeline
 from .pipelines.canary import CanaryPipeline
+from .pipelines.imap import ImapPipeline
+from .pipelines.smtp import SmtpPipeline
 
 app = typer.Typer(add_completion=False, help="ForwardGuard — silent-forwarder detector.")
 log = logging.getLogger("forwardguard")

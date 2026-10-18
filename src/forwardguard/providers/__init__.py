@@ -1,7 +1,7 @@
-from .base import Provider, Forwarder
-from .porkbun import PorkbunProvider
-from .cpanel import CpanelProvider
+from .base import Forwarder, Provider
 from .cloudflare import CloudflareProvider
+from .cpanel import CpanelProvider
+from .porkbun import PorkbunProvider
 
 REGISTRY = {
     "porkbun":    PorkbunProvider,
@@ -9,4 +9,4 @@ REGISTRY = {
     "cloudflare": CloudflareProvider,
 }
 
-__all__ = ["Provider", "Forwarder", "REGISTRY"]
+__all__ = ["REGISTRY", "Forwarder", "Provider"]

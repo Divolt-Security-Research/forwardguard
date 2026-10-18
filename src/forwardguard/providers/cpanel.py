@@ -10,7 +10,8 @@ Endpoint: GET https://<host>:2083/execute/Email/list_forwarders?domain=<d>
 from __future__ import annotations
 
 import httpx
-from .base import Provider, Forwarder
+
+from .base import Forwarder, Provider
 
 
 class CpanelProvider(Provider):

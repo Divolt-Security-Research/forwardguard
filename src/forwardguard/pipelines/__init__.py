@@ -1,6 +1,6 @@
 from .api import ApiPipeline
+from .canary import CanaryPipeline
 from .imap import ImapPipeline
 from .smtp import SmtpPipeline
-from .canary import CanaryPipeline
 
-__all__ = ["ApiPipeline", "ImapPipeline", "SmtpPipeline", "CanaryPipeline"]
+__all__ = ["ApiPipeline", "CanaryPipeline", "ImapPipeline", "SmtpPipeline"]

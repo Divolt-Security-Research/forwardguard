@@ -1,6 +1,3 @@
-import json
-import tempfile
-from pathlib import Path
 
 from forwardguard.pipelines.api import ApiPipeline
 from forwardguard.providers.base import Forwarder, Provider

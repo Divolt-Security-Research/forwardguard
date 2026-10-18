@@ -6,7 +6,8 @@ Endpoint: POST /api/json/v3/email/forwards/<domain> with {apikey, secretapikey}
 from __future__ import annotations
 
 import httpx
-from .base import Provider, Forwarder
+
+from .base import Forwarder, Provider
 
 
 class PorkbunProvider(Provider):
