@@ -42,10 +42,10 @@ dev = ["pytest>=8", "pytest-asyncio>=0.23", "pytest-cov>=5", "ruff>=0.5", "mypy>
 forwardguard = "forwardguard.cli:app"
 
 [project.urls]
-Homepage      = "https://github.com/divolt-research/forwardguard"
-Documentation = "https://github.com/divolt-research/forwardguard#readme"
-Repository    = "https://github.com/divolt-research/forwardguard"
-Issues        = "https://github.com/divolt-research/forwardguard/issues"
+Homepage      = "https://github.com/divolt-security-research/forwardguard"
+Documentation = "https://github.com/divolt-security-research/forwardguard#readme"
+Repository    = "https://github.com/divolt-security-research/forwardguard"
+Issues        = "https://github.com/divolt-security-research/forwardguard/issues"
 Paper         = "https://arxiv.org/"
 Standard      = "https://github.com/divolt-research/smfps"
 

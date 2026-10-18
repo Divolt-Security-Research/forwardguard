@@ -5,7 +5,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Paper: arXiv](https://img.shields.io/badge/paper-arXiv-b31b1b.svg)](https://arxiv.org/)
-[![Standard: SMFPS](https://img.shields.io/badge/standard-SMFPS--draft-green.svg)](https://github.com/divolt-research/smfps)
+[![Standard: SMFPS](https://img.shields.io/badge/standard-SMFPS--draft-green.svg)](https://github.com/divolt-security-research/smfps)
 
 ---
 
@@ -44,7 +44,7 @@ exfiltrated.
 
 ```bash
 # Clone and install
-git clone https://github.com/divolt-research/forwardguard.git
+git clone https://github.com/divolt-security-research/forwardguard.git
 cd forwardguard
 pip install -e .
 
@@ -63,7 +63,7 @@ Docker:
 
 ```bash
 docker run --rm -v $(pwd)/config.yaml:/etc/forwardguard/config.yaml \
-    ghcr.io/divolt-research/forwardguard:latest --once
+    ghcr.io/divolt-security-research/forwardguard:latest --once
 ```
 
 ## Supported providers
@@ -109,7 +109,7 @@ ForwardGuard is a *compensating control* — it detects silent forwarders after 
 fact. The preventive fix is for providers to adopt **SMFPS** (Silent-Mail-Forwarding
 Prevention Standard), an interoperable eight-requirement control baseline we are
 submitting as an IETF Internet-Draft. The draft, a conformance test suite, and a
-reference implementation live at <https://github.com/divolt-research/smfps>.
+reference implementation live at <https://github.com/divolt-security-research/smfps>.
 
 If you operate a registrar or hosting-control-panel product, we would love to
 collaborate on an early SMFPS implementation.

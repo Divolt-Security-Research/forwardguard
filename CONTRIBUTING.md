@@ -11,7 +11,7 @@ Thanks for considering a contribution.
 2. **Measurement-sweep data.** If you've exercised the Section 4 protocol
    against a provider you own an account on, the per-provider rubric score
    can be contributed to the companion technical report in `docs/sweep/`.
-3. **SMFPS conformance test cases.** The paired `divolt-research/smfps`
+3. **SMFPS conformance test cases.** The paired `divolt-security-research/smfps`
    repository holds the conformance suite; most contributions go there
    rather than here.
 
