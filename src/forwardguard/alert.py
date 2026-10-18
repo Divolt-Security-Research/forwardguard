@@ -11,14 +11,14 @@ import logging
 import syslog
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
-from enum import Enum
+from enum import StrEnum
 from typing import Any
 from uuid import uuid4
 
 import httpx
 
 
-class Severity(str, Enum):
+class Severity(StrEnum):
     LOW = "low"
     MEDIUM = "medium"
     HIGH = "high"
