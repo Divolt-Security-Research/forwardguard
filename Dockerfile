@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.15-slim
 
 LABEL org.opencontainers.image.title="ForwardGuard"
 LABEL org.opencontainers.image.description="Continuous audit tooling for silent email-forwarder detection"
